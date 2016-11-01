@@ -36,8 +36,6 @@ $(document).ready(function() {
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
       var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
-      console.log(newAddress);
-      console.log(newAddress.fullAddress());
       newContact.addresses.push(newAddress.fullAddress());
     });
 
@@ -49,9 +47,7 @@ $(document).ready(function() {
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
       $("ul#addresses").text("");
-      console.log(newContact.addresses)
       newContact.addresses.forEach(function(address) {
-        console.log(address)
         $("ul#addresses").append("<li>" + address + "</li>");
       });
     });
